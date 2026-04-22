@@ -1,0 +1,73 @@
+{
+  "name": "svelte-surgeon",
+  "version": "0.2.0",
+  "description": "Diagnose and auto-fix issues in your Svelte/SvelteKit app with AI (Claude, Gemini, OpenAI)",
+  "keywords": [
+    "diagnostics",
+    "linter",
+    "fixer",
+    "svelte",
+    "sveltekit",
+    "performance",
+    "ai",
+    "claude",
+    "gemini",
+    "openai"
+  ],
+  "homepage": "https://github.com/devHaitham481/svelte-surgeon#readme",
+  "bugs": {
+    "url": "https://github.com/devHaitham481/svelte-surgeon/issues"
+  },
+  "license": "MIT",
+  "author": "Haitham Maryan",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devHaitham481/svelte-surgeon.git"
+  },
+  "bin": {
+    "svelte-surgeon": "dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/cli.d.ts",
+      "default": "./dist/cli.js"
+    },
+    "./api": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./oxlint-plugin": {
+      "types": "./dist/svelte-doctor-plugin.d.ts",
+      "default": "./dist/svelte-doctor-plugin.js"
+    }
+  },
+  "scripts": {
+    "dev": "tsdown --watch",
+    "build": "rm -rf dist && NODE_ENV=production tsdown",
+    "typecheck": "tsc --noEmit",
+    "test": "pnpm build && vitest run"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.24.3",
+    "@google/generative-ai": "^0.24.1",
+    "commander": "^14.0.3",
+    "knip": "^5.83.1",
+    "openai": "^4.56.0",
+    "ora": "^9.3.0",
+    "oxlint": "^1.47.0",
+    "picocolors": "^1.1.1",
+    "prompts": "^2.4.2",
+    "typescript": ">=5.0.4 <7"
+  },
+  "devDependencies": {
+    "@oxlint/binding-darwin-arm64": "^1.48.0",
+    "@rolldown/binding-darwin-arm64": "1.0.0-rc.5",
+    "@types/prompts": "^2.4.9",
+    "tsdown": "^0.20.3",
+    "vitest": "^4.0.18"
+  }
+}

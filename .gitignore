@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.env
+.env.local
+.env.*.local
+*.log
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+pnpm-lock.yaml
+package-lock.json
+bun.lockb
+coverage/
+.turbo/
